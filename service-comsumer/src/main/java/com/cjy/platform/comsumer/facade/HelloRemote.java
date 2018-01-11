@@ -1,5 +1,6 @@
 package com.cjy.platform.comsumer.facade;
 
+import com.cjy.platform.comsumer.hystrix.HelloHystrix;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author: 陈建业
  * @date: 2018-01-11 16:36
  */
-@FeignClient(name= "spring-cloud-producer")
+@FeignClient(name= "spring-cloud-producer", fallback = HelloHystrix.class)
 public interface HelloRemote {
 
     @GetMapping(value = "/hello")
