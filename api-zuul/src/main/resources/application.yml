@@ -5,10 +5,11 @@ server:
   port: 9096
 eureka:
   instance:
-    hostname: localhost
+    hostname: api-zuul
+    prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:9090/eureka/
+      defaultZone: http://service-eureka:9090/eureka/
 zuul:
   routes:
     comsumer:                                               # 可以随便写，在zuul上面唯一即可；当这里的值 = service-id时，service-id可以不写。

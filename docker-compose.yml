@@ -1,0 +1,44 @@
+service-eureka:
+  image: cjy/service-eureka
+  hostname: service-eureka
+  ports:
+    - "9090:9090"
+
+service-producer:
+  image:  cjy/service-producer
+  ports:
+    - "9093:9093"
+  links:
+    - "service-eureka"
+
+service-system:
+  image:  cjy/service-system
+  ports:
+    - "9092:9092"
+  links:
+    - "service-eureka"
+
+config-server:
+  image:  cjy/config-server
+  ports:
+    - "9095:9095"
+  links:
+    - "service-eureka"
+
+service-consumer:
+  image:  cjy/service-consumer
+  ports:
+    - "9094:9094"
+  links:
+    - "service-eureka"
+    - "service-producer"
+    - "config-server"
+
+service-ribbon:
+  image:  cjy/service-ribbon
+  ports:
+    - "9091:9091"
+  links:
+    - "service-eureka"
+    - "service-system"
+    - "config-server"
