@@ -1,6 +1,6 @@
-package com.cjy.platform.comsumer.facade;
+package com.cjy.platform.feign.facade;
 
-import com.cjy.platform.comsumer.hystrix.HelloHystrix;
+import com.cjy.platform.feign.hystrix.HelloHystrix;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

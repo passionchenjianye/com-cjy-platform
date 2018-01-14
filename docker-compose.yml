@@ -1,44 +1,40 @@
-service-eureka:
+discovery:
   image: cjy/service-eureka
+  container_name: eureka
   hostname: service-eureka
   ports:
     - "9090:9090"
 
-service-producer:
+producer:
   image:  cjy/service-producer
+  container_name: producer
   ports:
     - "9093:9093"
   links:
-    - "service-eureka"
+    - "discovery"
 
-service-system:
+system:
   image:  cjy/service-system
+  container_name: system
   ports:
     - "9092:9092"
   links:
-    - "service-eureka"
+    - "discovery"
 
-config-server:
-  image:  cjy/config-server
-  ports:
-    - "9095:9095"
-  links:
-    - "service-eureka"
-
-service-consumer:
-  image:  cjy/service-consumer
+feign:
+  image:  cjy/service-feign
+  container_name: feign
   ports:
     - "9094:9094"
   links:
-    - "service-eureka"
-    - "service-producer"
-    - "config-server"
+    - "discovery"
+    - "producer"
 
-service-ribbon:
+ribbon:
   image:  cjy/service-ribbon
+  container_name: ribbon
   ports:
     - "9091:9091"
   links:
-    - "service-eureka"
-    - "service-system"
-    - "config-server"
+    - "discovery"
+    - "system"

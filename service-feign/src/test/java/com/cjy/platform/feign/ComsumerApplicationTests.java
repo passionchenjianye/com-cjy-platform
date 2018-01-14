@@ -1,4 +1,4 @@
-package com.cjy.platform.comsumer;
+package com.cjy.platform.feign;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

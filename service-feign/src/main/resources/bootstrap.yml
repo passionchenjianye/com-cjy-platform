@@ -1,15 +1,14 @@
 spring:
   application:
-    name: spring-cloud-comsumer
-  cloud:
-    config:
-      name: cjy-config
-      profile: prod
-      label: master
-      uri: http://config-server:9095
-      discovery:
-        enabled: true
-        service-id: spring-cloud-config-server
+    name: spring-cloud-feign
+#  cloud:
+#    config:
+#      name: cjy-config
+#      profile: prod
+#      label: master
+#      discovery:
+#        enabled: true
+#        service-id: spring-cloud-config-server
 #  rabbitmq:
 #    host: localhost
 #    port: 5672

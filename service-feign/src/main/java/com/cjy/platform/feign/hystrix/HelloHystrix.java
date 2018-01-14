@@ -1,6 +1,6 @@
-package com.cjy.platform.comsumer.hystrix;
+package com.cjy.platform.feign.hystrix;
 
-import com.cjy.platform.comsumer.facade.HelloRemote;
+import com.cjy.platform.feign.facade.HelloRemote;
 import org.springframework.stereotype.Component;
 
 /**

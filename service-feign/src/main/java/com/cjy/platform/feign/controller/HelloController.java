@@ -1,6 +1,6 @@
-package com.cjy.platform.comsumer.controller;
+package com.cjy.platform.feign.controller;
 
-import com.cjy.platform.comsumer.facade.HelloRemote;
+import com.cjy.platform.feign.facade.HelloRemote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

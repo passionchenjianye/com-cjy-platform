@@ -1,4 +1,4 @@
-//package com.cjy.platform.controller;
+//package com.cjy.platform.comsumer.controller;
 //
 //import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -18,7 +18,7 @@
 //    @Value("${name}")
 //    private String name;
 //
-//    @GetMapping("/config/hello1")
+//    @GetMapping("/config/hello")
 //    public String hello() {
 //        return this.name;
 //    }
